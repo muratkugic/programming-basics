@@ -20,6 +20,7 @@ namespace ConsoleUI
             Console.WriteLine("Choices:");
             Console.WriteLine("1. Convert celsius to farenheit");
             Console.WriteLine("2. Word multiplying");
+            Console.WriteLine("3. Total sum and average");
 
             Console.WriteLine();
 
@@ -65,7 +66,36 @@ namespace ConsoleUI
                     Console.WriteLine($"{i}: { favoriteWord }");
                 }
             }
+            else if (choice == 3)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"You entered choice '{ choice }'");
 
+                var numbers = new List<int>();
+
+                var addMoreNumbers = "";
+
+                do
+                {
+                    Console.Write("Enter a number: ");
+                    var userInput = Convert.ToInt32(Console.ReadLine());
+
+                    numbers.Add(userInput);
+
+                    Console.Write("To add more numbers press 'y', to stop press 'n': ");
+                    addMoreNumbers = Console.ReadLine();
+
+                } while (addMoreNumbers.ToLower() == "y");
+
+                Console.WriteLine();
+                Console.WriteLine($"The total sum of your numbers is: { numbers.Sum() }");
+
+                Console.WriteLine($"The average of your numbers is: { numbers.Average() }");
+
+
+            }
+
+            
 
 
 
