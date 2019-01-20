@@ -21,6 +21,22 @@ namespace ConsoleUI
                 [4] = "Tim"
             };
 
+            // printing out Dict keys and values
+
+            foreach (var key in employees.Keys)
+            {
+                Console.WriteLine($"Key: { key }");
+            }
+
+            Console.WriteLine();
+
+            foreach (var value in employees.Values)
+            {
+                Console.WriteLine($"Value: { value }");
+            }
+
+            Console.WriteLine();
+
             Console.Write("Enter employee ID: ");
             var userInput = Console.ReadLine();
 
@@ -54,6 +70,8 @@ namespace ConsoleUI
             {
                 Console.WriteLine($"'{ userInput }' is not a valid employee ID!");
             }
+
+            
 
 
 
