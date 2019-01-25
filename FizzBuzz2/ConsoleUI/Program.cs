@@ -21,15 +21,18 @@ namespace ConsoleUI
             Console.ReadLine();
         }
 
-        private static void FizzBuzz(int startNum, int stopNum, int mod, int mod2, string fizz, string buzz, string fizzBuzz)
+        // I did not find a better name for the 'FizzBuzz' numbers.
+        // Called them mod1 and mod2 because modulus/remainder operator.
+
+        private static void FizzBuzz(int startNum, int stopNum, int mod1, int mod2, string fizz, string buzz, string fizzBuzz)
         {
             for (int i = startNum; i <= stopNum; i++)
             {
-                if (i % mod == 0 && i % mod2 == 0)
+                if (i % mod1 == 0 && i % mod2 == 0)
                 {
                     Console.WriteLine(fizzBuzz);
                 }
-                else if (i % mod == 0)
+                else if (i % mod1 == 0)
                 {
                     Console.WriteLine(fizz);
                 }
