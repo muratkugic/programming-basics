@@ -18,6 +18,88 @@ namespace ConsoleUI.Characters.Spellcaster
         private ClothRobe bodyArmor;
         private Staff weapon;
 
+        public int AbilityPoints
+        {
+            get { return abilityPoints; }
+            set
+            {
+                if (value >= 1 && value <= 15)
+                {
+                    abilityPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Invalid value: 0-15!");
+                }
+            }
+        }
+
+        public int HealthPoints
+        {
+            get { return healthPoints; }
+            set
+            {
+                if (value >= 1)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Invalid value: > 0!");
+                }
+            }
+        }
+
+        public int Level
+        {
+            get { return level; }
+            set
+            {
+                if (value >= 1)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Invalid value: > 0!");
+                }
+            }
+        }
+
+        public string Faction
+        {
+            get { return faction; }
+            set
+            {
+                if (value == "Spellcaster")
+                {
+                    faction = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Invalid value. Must be Melee or Spellcaster.");
+                }
+            }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public ClothRobe BodyArmor
+        {
+            get { return bodyArmor; }
+            set { bodyArmor = value; }
+        }
+
+        public Staff Weapon
+        {
+            get { return weapon; }
+            set { weapon = value; }
+        }
+
         public Mage()
         {
 
