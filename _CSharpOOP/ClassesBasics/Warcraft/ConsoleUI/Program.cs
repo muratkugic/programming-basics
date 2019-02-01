@@ -12,6 +12,13 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            var war1 = new Warrior();
+            var war2 = new Warrior("Dude2", 99);
+            var war3 = new Warrior("Dude3", 88, 12);
+
+            var kn1 = new Knight();
+            var kn2 = new Knight("Dude2", 66);
+            var kn3 = new Knight(111, 85, "MainDuder");
         }
     }
 }

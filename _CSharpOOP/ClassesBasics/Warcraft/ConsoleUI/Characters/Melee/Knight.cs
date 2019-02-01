@@ -101,10 +101,27 @@ namespace ConsoleUI.Characters.Melee
         }
 
         public Knight()
+            : this("BasicDude", 1)
         {
 
         }
 
+        public Knight(string name, int level)
+            : this(120, 80, "MainCharacterDude")
+        {
+
+        }
+
+        public Knight(int healthPoints, int level, string name)
+        {
+            HealthPoints = healthPoints;
+            Level = level;
+            Name = name;
+            AbilityPoints = 5;   
+            Faction = "Melee";
+            BodyArmor = new Chainlink();
+            Weapon = new Hammer();
+        }
 
         public void HolyBlow()
         {

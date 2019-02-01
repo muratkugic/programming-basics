@@ -39,7 +39,7 @@ namespace ConsoleUI.Characters.Melee
             get { return healthPoints; }
             set
             {
-                if (value >= 1)
+                if (value <= 0)
                 {
                     healthPoints = value;
                 }
@@ -101,8 +101,26 @@ namespace ConsoleUI.Characters.Melee
         }
 
         public Warrior()
+            : this("WarriorLord", 1)
         {
 
+        }
+
+        public Warrior(string name, int level)
+            : this(name, level, 100)
+        {
+
+        }
+
+        public Warrior(string name, int level, int healthpoints)
+        {
+            Name = name;
+            Level = level;
+            HealthPoints = healthPoints;
+            Faction = "Melee";
+            AbilityPoints = 15;
+            Weapon = new Axe();
+            BodyArmor = new Chainlink();
         }
 
 
