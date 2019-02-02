@@ -25,7 +25,7 @@ namespace ConsoleUI.Characters.Ranged
             }
             set
             {
-                if (value >= 1)
+                if (value >= 0)
                 {
                     abilityPoints = value;
                 }
@@ -74,8 +74,32 @@ namespace ConsoleUI.Characters.Ranged
             }
         }
 
+        public string Name { get; set; }
         public Cloth Armor { get; set; }
         public Staff Weapon { get; set; }
+
+        public Mage()
+            : this("ConstName1", 2)
+        {
+
+        }
+
+        public Mage(string name, int level)
+            : this(name, level, 40)
+        {
+            Name = name;
+            Level = level;
+        }
+
+        public Mage(string name, int level, int healthPoints)
+        {
+            Name = name;
+            Level = level;
+            HealthPoints = healthPoints;
+            AbilityPoints = abilityPoints;
+            Armor = new Cloth();
+            Weapon = new Staff();
+        }
 
         public void IceLance()
         {

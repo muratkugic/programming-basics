@@ -25,7 +25,7 @@ namespace ConsoleUI.Characters.Melee
             }
             set
             {
-                if (value >= 1)
+                if (value >= 0)
                 {
                     abilityPoints = value;
                 }
@@ -74,8 +74,31 @@ namespace ConsoleUI.Characters.Melee
             }
         }
 
+        public string Name { get; set; }
+
         public Chainlink Armor { get; set; }
         public Sword Weapon { get; set; }
+
+        public Warrior()
+            : this("ConstName1", 2)
+        {
+
+        }
+
+        public Warrior(string name, int level)
+            : this(name, level, 40)
+        {
+        }
+
+        public Warrior(string name, int level, int healthPoints)
+        {
+            Name = name;
+            Level = level;
+            HealthPoints = healthPoints;
+            AbilityPoints = 16;
+            Armor = new Chainlink();
+            Weapon = new Sword();
+        }
 
         public void Execute()
         {
