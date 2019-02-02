@@ -17,6 +17,66 @@ namespace ConsoleUI.Characters.Melee
         private Chainlink armor;
         private Sword weapon;
 
+        public int AbilityPoints
+        {
+            get
+            {
+                return abilityPoints;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    abilityPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Not valid, value should be >=1");
+                }
+            }
+        }
+
+        public int HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Not valid, value should be >=1");
+                }
+            }
+        }
+
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Not valid, value should be >=1");
+                }
+            }
+        }
+
+        public Chainlink Armor { get; set; }
+        public Sword Weapon { get; set; }
+
         public void Execute()
         {
 
